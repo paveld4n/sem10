@@ -32,6 +32,7 @@ class ProtectSalary:
             raise ValueError("Зарплата не может быть ниже прожиточного минимума")
         var.__dict__[self.my_attr] = value
 
+
 class Worker:
     # имя атрибута, который делаем дескриптором, в конструктор не передаем
     name = ProtectSign()
@@ -40,7 +41,6 @@ class Worker:
     position = ProtectSign()
     income = ProtectSalary("income")
     
-
     def __init__(self, name, surname, position, age, wage, bonus):
         self.name = name
         self.surname = surname
@@ -48,7 +48,6 @@ class Worker:
         self.age = age
         self.income = wage + bonus
     
-
 class Position(Worker):
 
     def get_full_name(self):
